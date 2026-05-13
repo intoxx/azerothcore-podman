@@ -1,0 +1,11 @@
+[Pod]
+Network=ac.network
+# Database
+PublishPort=127.0.0.1:3306:3306
+PublishPort=[::1]:3306:3306
+# Authserver
+PublishPort=127.0.0.1:3724:3724
+PublishPort=[::1]:3724:3724
+# Worldserver
+PublishPort=127.0.0.1:8085:8085
+PublishPort=[::1]:8085:8085
