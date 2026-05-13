@@ -1,0 +1,5 @@
+[Unit]
+Description=AzerothCore network
+
+[Network]
+IPv6=true
