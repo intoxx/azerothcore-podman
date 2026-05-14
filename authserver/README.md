@@ -17,6 +17,7 @@
 
 ## Run
 ### Volumes
+| volume              | type                  | target             | description                                                                                                               |
 |---------------------|-----------------------|--------------------|---------------------------------------------------------------------------------------------------------------------------|
 | ./azerothcore-wotlk | bindmount (read-only) | /azerothcore-wotlk | Authserver database migration files from the local `azerothcore-wotlk/data` directory generated after running `build.sh`. |
 
@@ -30,6 +31,6 @@ Each configuration option has their equivalent in the form of an environment var
 
 See [Config overrides with env var](https://www.azerothcore.org/wiki/config-overrides-with-env-var) for more information.
 
-| Environment variable  | Description                                                                                                                                                                                                                                             |
+| environment variable  | description                                                                                                                                                                                                                                             |
 |-----------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `AC_SOURCE_DIRECTORY` | Root of AzerothCore source code. Used to apply database migrations from `<AC_SOURCE_DIRECTORY>/data/sql/`. In reality we don't need the whole source code that is why a local `azerothcore-wotlk/data` folder will be created after running `build.sh`. |
