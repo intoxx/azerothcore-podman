@@ -1,0 +1,12 @@
+[Unit]
+Description=Authserver used within AzerothCore
+
+[Container]
+Pod=ac.pod
+Image=localhost/ac/authserver
+Volume=./azerothcore-wotlk:/azerothcore-wotlk:ro,Z
+
+Environment=AC_SOURCE_DIRECTORY=/azerothcore-wotlk
+
+[Install]
+WantedBy=default.target
