@@ -1,5 +1,7 @@
 [Unit]
 Description=Authserver used within AzerothCore
+After=ac-database.container
+Requires=ac-database.container
 
 [Container]
 Pod=ac.pod
