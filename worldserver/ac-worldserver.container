@@ -4,6 +4,7 @@ Description=Worldserver used within AzerothCore
 [Container]
 Pod=ac.pod
 Image=localhost/ac/worldserver
+PodmanArgs=--tty
 Volume=./azerothcore-wotlk:/azerothcore-wotlk:ro,Z
 Volume=./data:/ac/data:ro,Z
 
