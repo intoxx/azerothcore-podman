@@ -1,0 +1,14 @@
+[Unit]
+Description=Worldserver used within AzerothCore
+
+[Container]
+Pod=ac.pod
+Image=localhost/ac/worldserver
+Volume=./azerothcore-wotlk:/azerothcore-wotlk:ro,Z
+Volume=./data:/ac/data:ro,Z
+
+Environment=AC_SOURCE_DIRECTORY=/azerothcore-wotlk
+Environment=AC_DATA_DIR=/ac/data
+
+[Install]
+WantedBy=default.target
