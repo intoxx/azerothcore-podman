@@ -4,6 +4,9 @@
 > [!WARNING]
 > **WORK IN PROGRESS**
 >
+> **MUST DO**
+> - Stop relying on host filesystem to build artifacts
+>
 > **SHOULD DO**
 > - Redirect authserver logs to container STDOUT
 > - Redirect worldserver logs to container STDOUT
