@@ -1,0 +1,26 @@
+[Unit]
+Description=MySQL database used within AzerothCore
+
+[Container]
+Pod=ac.pod
+Image=docker.io/mysql:8.4
+HealthCmd="mysqladmin ping || exit 1"
+HealthInterval=5s
+HealthTimeout=5s
+HealthRetries=10
+Notify=healthy
+
+Volume=./migrations:/docker-entrypoint-initdb.d:ro,Z
+Volume=ac-database:/var/lib/mysql:Z
+
+# Environment variables
+# See https://hub.docker.com/_/mysql/#docker-secrets for <ENV>_FILE behavior
+Environment=MYSQL_ROOT_PASSWORD_FILE=/run/secrets/password
+Environment=TZ=UTC
+
+# Secrets
+Secret=ac-database-password,type=mount,target=password,mode=400
+Secret=ac-database-option-file,type=mount,target=/root/.my.cnf,mode=400
+
+[Install]
+WantedBy=default.target
