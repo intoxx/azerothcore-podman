@@ -37,23 +37,23 @@ password=<password>
 and then running commands like `mysqladmin ping` will automatically read it.
 You can also pass a specific path with `--defaults-file`.
 
-| secret                  | type  | target          | mode  | description                                                                                                                                                                                                                                                                                                                                                    |
-|-------------------------|-------|-----------------|-------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| ac-database-password    | mount | `password`      | `400` | MySQL database password. Since target is relatively specified, it will be mounted at `/run/secrets/password`.                                                                                                                                                                                                                                                  |
-| ac-database-option-file | mount | `/root/.my.cnf` | `400` | [MySQL default option file](https://dev.mysql.com/doc/refman/9.7/en/password-security-user.html). It's a duplicate of `ac-database-password` but within a template to be used for authentication by tools like `msqladmin` without cleartext passwords, therefore you must update both secrets when changing the password. See the previous `.my.cnf` example. |
+| secret                    | type  | target          | mode  | description                                                                                                                                                                                                                                                                                                                                                    |
+|---------------------------|-------|-----------------|-------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `ac-database-password`    | mount | `password`      | `400` | MySQL database password. Since target is relatively specified, it will be mounted at `/run/secrets/password`.                                                                                                                                                                                                                                                  |
+| `ac-database-option-file` | mount | `/root/.my.cnf` | `400` | [MySQL default option file](https://dev.mysql.com/doc/refman/9.7/en/password-security-user.html). It's a duplicate of `ac-database-password` but within a template to be used for authentication by tools like `msqladmin` without cleartext passwords, therefore you must update both secrets when changing the password. See the previous `.my.cnf` example. |
 
 ## Environment variables
 Mandatory environment variables.
 
-| environment variable     | description                                                                                  |
-|--------------------------|----------------------------------------------------------------------------------------------|
-| MYSQL_ROOT_PASSWORD_FILE | **Absolute** target path of `ac-db-password`. This variable is specific to the docker image. |
+| environment variable       | description                                                                                        |
+|----------------------------|----------------------------------------------------------------------------------------------------|
+| `MYSQL_ROOT_PASSWORD_FILE` | **Absolute** target path of `ac-database-password`. This variable is specific to the docker image. |
 
 ## Volumes
-| volume       | type                  | target                        | description                                      |
-|--------------|-----------------------|-------------------------------|--------------------------------------------------|
-| ./migrations | bindmount (read-only) | `/docker-entrypoint-initdb.d` | Files used for database initialization.          |
-| ac-database  | bindmount (rw)        | `/var/lib/mysql`              | Location where MySQL writes all data by default. |
+| volume         | type                  | target                        | description                                      |
+|----------------|-----------------------|-------------------------------|--------------------------------------------------|
+| `./migrations` | bindmount (read-only) | `/docker-entrypoint-initdb.d` | Files used for database initialization.          |
+| `ac-database`  | named volume          | `/var/lib/mysql`              | Location where MySQL writes all data by default. |
 
 ## Migrations
 The initial setup `migrations/init.sql` takes care of creating the right user and databases which is the same as the one provided by [AzerothCore](https://github.com/azerothcore/azerothcore-wotlk/blob/master/data/sql/create/create_mysql.sql) but with every host occurence of `localhost` replaced by `127.0.0.1` because we're not connecting through the local socket but rather TCP/IP.
