@@ -3,6 +3,10 @@
 
 > [!WARNING]
 > **WORK IN PROGRESS**
+>
+> **SHOULD DO**
+> - Redirect authserver logs to container STDOUT
+> - Redirect worldserver logs to container STDOUT
 
 ## About
 ###### Author
