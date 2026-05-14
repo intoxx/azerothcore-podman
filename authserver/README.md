@@ -16,6 +16,10 @@
 2. Run `build.sh` to create the `ac/authserver` image.
 
 ## Run
+> [!NOTE]
+> The authserver is a **REPL** which means it is **interactive.** That is why it's important to have it started with the `--tty` *(`-t`)* flag, while the `--interactive` *(`-i`)* flag is optional as we don't need persistent STDIN, simply attaching to the container will open it on-demand.
+> As a consequence if you want to **attach** to this process you must run `podman attach <CONTAINER>` but **careful** about doing **`CTRL+C`** as it will **kill the process**, exiting should be done with the standard **podman key sequences `CTRL+P CTRL+Q`.**
+
 ### Volumes
 | volume              | type                  | target             | description                                                                                                               |
 |---------------------|-----------------------|--------------------|---------------------------------------------------------------------------------------------------------------------------|
