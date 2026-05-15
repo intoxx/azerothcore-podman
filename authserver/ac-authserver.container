@@ -8,6 +8,7 @@ Pod=ac.pod
 Image=localhost/ac/authserver
 PodmanArgs=--tty
 Volume=./azerothcore-wotlk:/azerothcore-wotlk:ro,Z
+Volume=./config/etc:/ac/etc:Z
 
 Environment=AC_SOURCE_DIRECTORY=/azerothcore-wotlk
 

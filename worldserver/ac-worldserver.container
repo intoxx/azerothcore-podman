@@ -9,6 +9,7 @@ Image=localhost/ac/worldserver
 PodmanArgs=--tty
 Volume=./azerothcore-wotlk:/azerothcore-wotlk:ro,Z
 Volume=./data:/ac/data:ro,Z
+Volume=./config/etc:/ac/etc:Z
 
 Environment=AC_SOURCE_DIRECTORY=/azerothcore-wotlk
 Environment=AC_DATA_DIR=/ac/data

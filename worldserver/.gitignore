@@ -1,3 +1,4 @@
 azerothcore-wotlk/
 data/
 !data/.gitkeep
+config/

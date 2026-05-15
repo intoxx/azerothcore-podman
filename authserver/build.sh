@@ -12,6 +12,9 @@ AC_SOURCE_DIRECTORY='../core/azerothcore-wotlk'
 echo "Copying data directory from $AC_SOURCE_DIRECTORY to ./azerothcore-wotlk"
 mkdir -p azerothcore-wotlk && cp -rv "$AC_SOURCE_DIRECTORY/data" azerothcore-wotlk/
 
+echo "Copying configuration files from $AC_BUILD_DIRECTORY to ./config"
+mkdir -p config/etc && cp -rv "$AC_BUILD_DIRECTORY/dist/etc/authserver.conf" config/etc
+
 # Create the image
 CNT=`buildah from localhost/ac/opensuse-runtime`
 
