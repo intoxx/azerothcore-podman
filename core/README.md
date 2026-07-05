@@ -3,9 +3,6 @@ This directory contains tools to build the core.
 
 > [!WARNING]
 > **WORK IN PROGRESS**
->
-> **MUST DO**
-> - ~~Update README with potential LLVM and CMakeList fixes~~
 
 ## Dependencies
 Install the following dependencies before performing anything.
@@ -13,8 +10,17 @@ Install the following dependencies before performing anything.
 - buildah
 
 ## Compilation
-1. Download AzerothCore source code into this folder with
-`git clone https://github.com/azerothcore/azerothcore-wotlk.git`
+1. Download AzerothCore or Playerbots fork source code into this folder with
+```sh
+# original azerothcore
+git clone https://github.com/azerothcore/azerothcore-wotlk.git
+
+# or the version compatible with mod-playerbots
+# see https://github.com/mod-playerbots/mod-playerbots/wiki/Installation-Guide
+git clone https://github.com/mod-playerbots/azerothcore-wotlk.git --branch=Playerbot
+cd azerothcore-wotlk/modules
+git clone https://github.com/mod-playerbots/mod-playerbots.git --branch=master
+```
 2. Build the base container image with `./build-bci.sh`
 3. Build the development container image with `./build-dev.sh`.
 4. Finally, build the core with `./build.sh`. This will create a `build` directory on the host.
