@@ -1,0 +1,3 @@
+CREATE DATABASE IF NOT EXISTS acore_playerbots;
+GRANT ALL PRIVILEGES ON acore_playerbots.* TO 'acore'@'127.0.0.1';
+FLUSH PRIVILEGES;
