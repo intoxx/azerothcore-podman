@@ -42,3 +42,6 @@ See [Config overrides with env var](https://www.azerothcore.org/wiki/config-over
 | `AC_DATA_DIR`            | Root of localized client data files supported by the server.                                                                                                                                                                                            |
 | `AC_MAP_UPDATE_INTERVAL` | Time in milliseconds for map update interval. Impacts performance.                                                                                                                                                                                      |
 | `AC_MAP_UPDATE_THREADS`  | Number of cores + 1 to use to distribute the map updating process. Impacts performance.                                                                                                                                                                 |
+
+### Optimizing playerbots
+See [mod-playerbots tuning](https://github.com/mod-playerbots/mod-playerbots/wiki/Installation-Guide#4-configure-playerbots).

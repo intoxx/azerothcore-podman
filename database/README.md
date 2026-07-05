@@ -57,3 +57,6 @@ Mandatory environment variables.
 
 ## Migrations
 The initial setup `migrations/init.sql` takes care of creating the right user and databases which is the same as the one provided by [AzerothCore](https://github.com/azerothcore/azerothcore-wotlk/blob/master/data/sql/create/create_mysql.sql) but with every host occurence of `localhost` replaced by `127.0.0.1` because we're not connecting through the local socket but rather TCP/IP.
+
+## Optimizing playerbots
+See [mod-playerbot tuning](https://github.com/mod-playerbots/mod-playerbots/wiki/Installation-Guide#4-configure-playerbots).

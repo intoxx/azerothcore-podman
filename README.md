@@ -1,5 +1,5 @@
 # AzerothCore-podman
-[AzerothCore](https://www.azerothcore.org/wiki/classic-installation) built with [buildah](https://buildah.io) and ran with [Podman](https://podman.io).
+[AzerothCore](https://www.azerothcore.org/wiki/classic-installation) with optional support for [mod-playerbots](https://github.com/mod-playerbots/mod-playerbots) built with [buildah](https://buildah.io) and ran with [Podman](https://podman.io).
 
 > [!WARNING]
 > **WORK IN PROGRESS**
@@ -10,6 +10,8 @@
 > **SHOULD DO**
 > - Redirect authserver logs to container STDOUT
 > - Redirect worldserver logs to container STDOUT
+
+Please read carefully each subfolder README.
 
 ## About
 ###### Author

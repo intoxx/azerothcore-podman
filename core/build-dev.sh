@@ -11,7 +11,7 @@ CNT=`buildah from localhost/ac/opensuse-bci`
 
 # 3. Install development dependencies
 # The package fuse-overlayfs is installed to support future container-in-container without having to bindmount
-buildah run $CNT zypper -n install --no-recommends buildah fuse-overlayfs git cmake make gcc gcc-c++ clang libopenssl-devel libbz2-devel readline-devel ncurses-devel boost-devel libboost_filesystem-devel libboost_program_options-devel libboost_iostreams-devel libboost_regex-devel mysql-community-devel
+buildah run $CNT zypper -n install --no-recommends buildah fuse-overlayfs git cmake make gcc gcc-c++ clang libopenssl-devel libbz2-devel readline-devel ncurses-devel boost-devel libboost_filesystem-devel libboost_program_options-devel libboost_iostreams-devel libboost_regex-devel libboost_chrono-devel libboost_date_time-devel mysql-community-devel
 
 # 4. Remove cache
 buildah run $CNT zypper -n clean -a

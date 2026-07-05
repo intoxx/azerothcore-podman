@@ -13,8 +13,8 @@ Volume=./config/etc:/ac/etc:Z
 
 Environment=AC_SOURCE_DIRECTORY=/azerothcore-wotlk
 Environment=AC_DATA_DIR=/ac/data
-#Environment=AC_MAP_UPDATE_INTERVAL=100
-#Environment=AC_MAP_UPDATE_THREADS=4
+Environment=AC_MAP_UPDATE_INTERVAL=100
+Environment=AC_MAP_UPDATE_THREADS=4
 
 [Install]
 WantedBy=default.target
