@@ -10,7 +10,7 @@ TARGET_IMAGE="ac/opensuse-runtime"
 CNT=`buildah from localhost/ac/opensuse-bci`
 
 # 3. Install runtime dependencies
-buildah run $CNT zypper -n install --no-recommends libz1 liblzma5 libopenssl3 libbz2-1 readline-devel ncurses-devel libboost_atomic1_91_0 libboost_container1_91_0 libboost_random1_91_0 libboost_filesystem1_91_0 libboost_program_options1_91_0 libboost_iostreams1_91_0 libboost_regex1_91_0 mysql-community-client
+buildah run $CNT zypper -n install --no-recommends libz1 liblzma5 libopenssl3 libbz2-1 readline-devel ncurses-devel libboost_atomic1_91_0 libboost_container1_91_0 libboost_random1_91_0 libboost_filesystem1_91_0 libboost_program_options1_91_0 libboost_iostreams1_91_0 libboost_regex1_91_0 libboost_chrono1_91_0 libboost_date_time1_91_0 mysql-community-client
 
 # 4. Remove cache
 buildah run $CNT zypper -n clean -a
