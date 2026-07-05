@@ -46,6 +46,8 @@ echo "Preparing authserver configuration"
 cp "$INSTALL_PREFIX/etc/authserver.conf.dist" "$INSTALL_PREFIX/etc/authserver.conf"
 echo "Preparing worldserver configuration"
 cp "$INSTALL_PREFIX/etc/worldserver.conf.dist" "$INSTALL_PREFIX/etc/worldserver.conf"
+echo "Preparing playerbots module configuration"
+cp "$INSTALL_PREFIX/etc/modules/playerbots.conf.dist" "$INSTALL_PREFIX/etc/modules/playerbots.conf"
 
 echo "AzerothCore successfully installed at $INSTALL_PREFIX"
 '
